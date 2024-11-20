@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test1/util/button.dart';
 
 class DialogBox extends StatelessWidget {
-  const DialogBox({super.key});
+  // ignore: prefer_typing_uninitialized_variables
+  final controller;
+  const DialogBox({super.key, required this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +16,7 @@ class DialogBox extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 const TextField(
+                  controller: controller,
                   decoration: InputDecoration(
                       hintText: 'Add a new task',
                       border: OutlineInputBorder(
