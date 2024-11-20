@@ -23,12 +23,16 @@ class TodoTile extends StatelessWidget {
         children: [
           // checkbox
           Checkbox(
-            value: taskCompleted,
-            onChanged: onChanged,
-          ),
+              value: taskCompleted,
+              onChanged: onChanged,
+              activeColor: Colors.black),
 
           // task name
-          Text(taskName),
+          Text(taskName,
+              style: TextStyle(
+                  decoration: taskCompleted
+                      ? TextDecoration.lineThrough
+                      : TextDecoration.none)),
         ],
       ),
     );
