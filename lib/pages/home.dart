@@ -1,29 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_test1/util/todo_tile.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.yellow[200],
         appBar: AppBar(
-      title: const Text(
-        'Breakfast',
-        style: TextStyle(
-            color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
-      ),
-      backgroundColor: Colors.white,
-      centerTitle: true,
-      elevation: 0.0,
-      leading: Container(
-        width: 30,
-        height: 30,
-        margin: const EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          color: Colors.black,
-          borderRadius: BorderRadius.circular(10),
+          title: const Text('TODO'),
+          elevation: 0,
+          backgroundColor: Colors.yellow[600],
         ),
-      ),
-    ));
+        body: ListView(children: [
+          TodoTile(
+            taskName: 'Test',
+            taskCompleted: true,
+            onChanged: (p0) {},
+          ),
+        ]));
   }
 }
